@@ -49,7 +49,7 @@ module.exports = (msg) => {
             msg.channel.send('オツカレサマ');
             return;
         }
-        if (msg.content.match(/\bneru|(ね|ネ)((る|ル)|(ま|マ)(す|ス))|ﾈ(ﾙ|ﾏｽ)|寝(る|ます)/i)) {
+        if (msg.content.match(/\bneru|(ね|ネ)((る|ル)|(ま|マ)(す|ス))|ﾈ(ﾙ|ﾏｽ)|寝(る|ます)|\boyasu|(お|オ)(や|ヤ)(す|ス)|ｵﾔｽ/i)) {
             msg.channel.send('オヤスミナサイ');
             return;
         }
