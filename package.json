@@ -1,6 +1,6 @@
 {
   "name": "octoling-girl-bot",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "A chat bot for Discord.",
   "main": "index.js",
   "scripts": {
