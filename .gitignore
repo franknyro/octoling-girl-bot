@@ -3,6 +3,3 @@ node_modules/
 
 # JSON
 package-lock.json
-
-# token
-token.js

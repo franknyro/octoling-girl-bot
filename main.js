@@ -17,4 +17,5 @@ client.on('message', msg => {
     response(msg);
 });
 
-client.login(require('./token.js'));
+const token = process.env.OCTOLING_GIRL_BOT_TOKEN;
+client.login(token);
