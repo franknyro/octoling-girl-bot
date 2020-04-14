@@ -5,7 +5,19 @@ const generateMessageTo = require('./generate-message.js');
 module.exports = (msg) => {
     // タコガール宛のメンションに返信する
     if (msg.content.match(/<@!697530975722143915>/)) {
-        const text = `${msg.author}` + ' ' + 'ナンデショウ？';
+        const atMarkAuthor = `${msg.author}` + ' ';
+        let text;
+        if (msg.content.match(/開店/)) {
+            msg.channel.send('[オフィスKUMASAN]');
+            text = atMarkAuthor + 'キョウモ イチニチ ガンバリマショ';
+        }
+        else if (msg.content.match(/閉店/)) {
+            msg.channel.send('[CLOSE | オフィスKUMASAN]');
+            text = atMarkAuthor + 'キョウモ イチニチ オツカレサマデスネ？';
+        }
+        else {
+            text = atMarkAuthor + 'ナンデスカ？';
+        }
         msg.channel.send(text);
         return;
     }
