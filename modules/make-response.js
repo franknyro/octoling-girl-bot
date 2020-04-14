@@ -8,11 +8,9 @@ module.exports = (msg) => {
         const atMarkAuthor = `${msg.author}` + ' ';
         let text;
         if (msg.content.match(/開店/)) {
-            msg.channel.send('[オフィスKUMASAN]');
             text = atMarkAuthor + 'キョウモ イチニチ ガンバリマショ';
         }
         else if (msg.content.match(/閉店/)) {
-            msg.channel.send('[CLOSE | オフィスKUMASAN]');
             text = atMarkAuthor + 'キョウモ イチニチ オツカレサマデスネ？';
         }
         else {

@@ -15,7 +15,6 @@ module.exports = (msg) => {
             setTextId(msg.channel.id);
             setVoiceId(msg.member.voice.channel.id);
             msg.channel.send('オフィス ツカイマスネ？');
-            msg.channel.send('\[オフィスkumasan\]');
             console.log('now opened!');
         }
     }
