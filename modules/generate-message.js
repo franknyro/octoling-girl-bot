@@ -4,8 +4,8 @@
 const curDate = new Date();
 const curHour = curDate.getHours();
 
-// あいさつ（優先度高）
-// ねぎらいのことば（優先度低）
+// あいさつ（優先度高）時間帯によって返答が変わる
+// ねぎらいのことば（優先度低）時間帯によって返答が変わらない
 module.exports = (msg) => {
     if (msg.member.voice.channel.members.size > 0) {
         if (msg.content.match(/\bo(ha|ah)|(お|オ)(は|ハ)|ｵﾊ/i)) {

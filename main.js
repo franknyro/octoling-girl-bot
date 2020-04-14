@@ -30,7 +30,7 @@ client.on('channelDelete', deletedChannel => {
 });
 
 client.on('message', msg => {
-    if (isMessageExeption()) {
+    if (isMessageExeption(msg)) {
         return;
     }
     openOfficeIfNeeded(msg);

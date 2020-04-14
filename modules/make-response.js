@@ -15,7 +15,7 @@ module.exports = (msg) => {
     }
     // ワードセットにマッチしたら返答を生成
     const text = generateMessageTo(msg);
-    if (!text) {
+    if (text) {
         msg.channel.send(text);
     }
 };

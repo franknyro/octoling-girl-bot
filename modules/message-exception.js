@@ -18,7 +18,7 @@ module.exports = (msg) => {
         return true;
     }
     // オフィス化したチャンネルがあるときは、そのチャンネル以外のチャットを無視
-    if (!getTextId()) {
+    if (getTextId()) {
         if (msg.channel.id !== getTextId()) {
             return true;
         }
