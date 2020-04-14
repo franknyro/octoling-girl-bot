@@ -6,7 +6,7 @@ const token = process.env.OCTOLING_GIRL_BOT_TOKEN;
 
 const closeOfficeIfNeeded = require('./modules/close-office.js');
 const openOfficeIfNeeded = require('./modules/open-office.js');
-const response = require('./modules/response.js');
+const makeResponseTo = require('./modules/make-response.js');
 const getTextId = require('./modules/get-text-id.js');
 const setTextId = require('./modules/set-text-id.js');
 const setVoiceId = require('./modules/set-voice-id.js');
@@ -34,7 +34,7 @@ client.on('message', msg => {
         return;
     }
     openOfficeIfNeeded(msg);
-    response(msg);
+    makeResponseTo(msg);
 });
 
 client.login(token);

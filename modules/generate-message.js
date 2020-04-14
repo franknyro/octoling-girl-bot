@@ -4,78 +4,64 @@
 const curDate = new Date();
 const curHour = curDate.getHours();
 
+// あいさつ（優先度高）
+// ねぎらいのことば（優先度低）
 module.exports = (msg) => {
     if (msg.member.voice.channel.members.size > 0) {
         if (msg.content.match(/\bo(ha|ah)|(お|オ)(は|ハ)|ｵﾊ/i)) {
             if (curHour < 4) {
-                msg.channel.send('zzz...');
-                return;
+                return 'zzz...';
             }
             if (curHour < 9) {
-                msg.channel.send('オハヨウゴザイマス ハヤイデス？');
-                return;
+                return 'オハヨウゴザイマス ハヤイデス？';
             }
             if (curHour < 12) {
-                msg.channel.send('オハヨウゴザイマス');
-                return;
+                return 'オハヨウゴザイマス';
             }
             if (curHour < 15) {
-                msg.channel.send('モウ オヒルデスカ？');
-                return;
+                return 'モウ オヒルデスカ？';
             }
             if (curHour < 18) {
-                msg.channel.send('オヒルネ シテイラッシャイマス？');
-                return;
+                return 'オヒルネ シテイラッシャイマス？';
             }
             if (curHour < 21) {
-                msg.channel.send('イマ ヨルデス...');
-                return;
+                return 'イマ ヨルデス...';
             }
             if (curHour < 24) {
-                msg.channel.send('ネボケテマスカ？');
-                return;
+                return 'ネボケテマスカ？';
             }
         }
         if (msg.content.match(/\bkon|^((こ|コ)(ん|ン)|ｺﾝ)|\b(o|u)i*-*s+u|^((お|オ|う|ウ)(い|イ|ぃ|ィ)*ー*(っ|ッ)*(す|ス)|(ｵ|ｳ)(ｲ|ｨ)*ｰ*ｯ*?ｽ|押忍)|^((ち|チ)(わ|ワ|ゎ|ヮ|は|ハ|ゃ|ャ)|ﾁ(ﾜ|ﾊ|ｬ))|\bdou?mo|^((ど|ド)(う|ウ)?(も|モ)|ﾄﾞｳ?ﾓ)|^((や|ヤ|ゃ|ャ)(あ|ア|ぁ|ァ)|(ﾔ|ｬ)(ｱ|ｧ))/i)) {
             if (4 <= curHour && curHour < 18) {
-                msg.channel.send('コンニチワ');
+                return 'コンニチワ';
             }
             else {
-                msg.channel.send('コンバンワ');
+                return 'コンバンワ';
             }
-            return;
         }
         if (msg.content.match(/\bots?u|(お|オ)(っ|ッ)?(つ|ツ|疲)|ｵｯ?ﾂ|乙|O2/i)) {
-            msg.channel.send('オツカレサマ');
-            return;
+            return 'オツカレサマ';
         }
         if (msg.content.match(/\bneru|(ね|ネ)((る|ル)|(ま|マ)(す|ス))|ﾈ(ﾙ|ﾏｽ)|寝(る|ます)|\boyasu|(お|オ)(や|ヤ)(す|ス)|ｵﾔｽ/i)) {
-            msg.channel.send('オヤスミナサイ');
-            return;
+            return 'オヤスミナサイ';
         }
         if (msg.content.match(/\bnemu|(ね|ネ)(む|ム)|ﾈﾑ|眠た?い|(ね|寝)たい/i)) {
             if (4 <= curHour && curHour < 12) {
-                msg.channel.send('ネブソク デス？');
-                return;
+                return 'ネブソク デス？';
             }
             if (12 <= curHour && curHour < 18) {
-                msg.channel.send('オヒルネ シマショウ');
-                return;
+                return 'オヒルネ シマショウ';
             }
-            msg.channel.send('ソロソロ ネマショウ');
-            return;
+            return 'ソロソロ ネマショウ';
         }
         if (msg.content.match(/\b(t(s?u|i)|(c|ch)i)kare|(つ|ツ|ち|チ)(か|カ)(れ|レ)|(ﾂ|ﾁ)ｶﾚ|疲れ/i)) {
-            msg.channel.send('キュウケイ シマショウ');
-            return;
+            return 'キュウケイ シマショウ';
         }
         if (msg.content.match(/\bts?uram?i|((つ|ツ)(ら|ラ)|辛)(い|イ|み|ミ)|ﾂﾗ(ｲ|ﾐ)/i)) {
-            msg.channel.send('ガンバルノハ ヨイコト！');
-            return;
+            return 'ガンバルノハ ヨイコト！';
         }
         if (msg.content.match(/\bo(ch|ty)a|(お|オ)((ち|チ)(ゃ|ャ)|茶)|ｵﾁｬ/i)) {
-            msg.channel.send('ワタシモ ノマセテ イタダキマシタ？');
-            return;
+            return 'ワタシモ ノマセテ イタダキマシタ？';
         }
     }
 };
