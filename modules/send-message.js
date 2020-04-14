@@ -5,7 +5,7 @@ const curDate = new Date();
 const curHour = curDate.getHours();
 
 module.exports = (msg) => {
-    if (msg.member.voice.channel.members.size === 1) {
+    if (msg.member.voice.channel.members.size > 0) {
         if (msg.content.match(/\bo(ha|ah)|(お|オ)(は|ハ)|ｵﾊ/i)) {
             if (curHour < 4) {
                 msg.channel.send('zzz...');
@@ -67,6 +67,14 @@ module.exports = (msg) => {
         }
         if (msg.content.match(/\b(t(s?u|i)|(c|ch)i)kare|(つ|ツ|ち|チ)(か|カ)(れ|レ)|(ﾂ|ﾁ)ｶﾚ|疲れ/i)) {
             msg.channel.send('キュウケイ シマショウ');
+            return;
+        }
+        if (msg.content.match(/\bts?uram?i|((つ|ツ)(ら|ラ)|辛)(い|イ|み|ミ)|ﾂﾗ(ｲ|ﾐ)/i)) {
+            msg.channel.send('ガンバルノハ ヨイコト！');
+            return;
+        }
+        if (msg.content.match(/\bo(ch|ty)a|(お|オ)((ち|チ)(ゃ|ャ)|茶)|ｵﾁｬ/i)) {
+            msg.channel.send('ワタシモ ノマセテ イタダキマシタ？');
             return;
         }
     }
