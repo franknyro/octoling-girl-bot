@@ -1,6 +1,6 @@
 'use strict'
 
-const sendMessage = require('./send-message.js');
+const sendMessage = require('./generate-message.js');
 const getTextId = require('./get-text-id.js');
 const setTextId = require('./set-text-id.js');
 const getVoiceId = require('./get-voice-id.js');

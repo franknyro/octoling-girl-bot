@@ -58,7 +58,7 @@ module.exports = (msg) => {
                 msg.channel.send('ネブソク デス？');
                 return;
             }
-            if (curHour <= 12 && curHour < 18) {
+            if (12 <= curHour && curHour < 18) {
                 msg.channel.send('オヒルネ シマショウ');
                 return;
             }
