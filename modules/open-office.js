@@ -16,7 +16,7 @@ module.exports = (msg) => {
             setTextId(msg.channel.id);
             setVoiceId(msg.member.voice.channel.id);
             msg.channel.send('オフィス ツカイマスネ？');
-            client.channels.fetch(getTextId())
+            msg.channel.fetch(getTextId())
                 .then(channel => {
                     const name = channel.name;
                     channel.setName(name.replace(/_.*/i, '_オフィスKUMASAN'))
@@ -24,7 +24,7 @@ module.exports = (msg) => {
                         .catch(console.error);
                 })
                 .catch(console.error);
-            client.channels.fetch(getVoiceId())
+            msg.channel.fetch(getVoiceId())
                 .then(channel => {
                     const name = channel.name;
                     channel.setName(name.replace(/_.*/i, '_オフィスKUMASAN'))

@@ -12,23 +12,12 @@ module.exports = (msg) => {
             client.channels.fetch(getTextId())
                 .then(channel => {
                     const name = channel.name;
-                    channel.setName(name.replace(/_.*/i, '_オフィスKUMASAN'))
+                    channel.setName(name.replace(/_.*/i, '_CLOSE|オフィスKUMASAN'))
                         .then(console.log("changed text channel's name"))
                         .catch(console.error);
                 })
                 .catch(console.error);
             client.channels.fetch(getVoiceId())
-                .then(channel => {
-                    const name = channel.name;
-                    channel.setName(name.replace(/_.*/i, '_オフィスKUMASAN'))
-                        .then(console.log("changed text channel's name"))
-                        .catch(console.error);
-                })
-                .catch(console.error);
-        }
-        else if (msg.content.match(/閉店/)) {
-            text = atMarkAuthor + 'キョウモ イチニチ オツカレサマデスネ？';
-            client.channels.fetch(getTextId())
                 .then(channel => {
                     const name = channel.name;
                     channel.setName(name.replace(/_.*/i, '_CLOSE|オフィスKUMASAN'))
@@ -36,7 +25,18 @@ module.exports = (msg) => {
                         .catch(console.error);
                 })
                 .catch(console.error);
-            client.channels.fetch(getVoiceId())
+        }
+        else if (msg.content.match(/閉店/)) {
+            text = atMarkAuthor + 'キョウモ イチニチ オツカレサマデスネ？';
+            msg.channel.fetch(getTextId())
+                .then(channel => {
+                    const name = channel.name;
+                    channel.setName(name.replace(/_.*/i, '_CLOSE|オフィスKUMASAN'))
+                        .then(console.log("changed text channel's name"))
+                        .catch(console.error);
+                })
+                .catch(console.error);
+            msg.channel.fetch(getVoiceId())
                 .then(channel => {
                     const name = channel.name;
                     channel.setName(name.replace(/_.*/i, '_CLOSE|オフィスKUMASAN'))
