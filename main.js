@@ -33,8 +33,8 @@ client.on('message', msg => {
     if (isMessageException(msg)) {
         return;
     }
-    openOfficeIfNeeded(msg);
-    makeResponseTo(msg);
+    openOfficeIfNeeded(msg, client);
+    makeResponseTo(msg, client);
 });
 
 client.login(token);

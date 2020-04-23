@@ -4,7 +4,7 @@ const getTextId = require('./get-text-id.js');
 const getVoiceId = require('./get-voice-id.js');
 const generateMessageTo = require('./generate-message.js');
 
-module.exports = (msg) => {
+module.exports = (msg, client) => {
     // タコガール宛のメンションに返信する
     if (msg.content.match(/<@!697530975722143915>/)) {
         const atMarkAuthor = `${msg.author}` + ' ';
@@ -23,14 +23,14 @@ module.exports = (msg) => {
                 .then(channel => {
                     const name = channel.name;
                     channel.setName(name.replace(/_.*/i, '_CLOSE|オフィスKUMASAN'))
-                        .then(console.log("changed text channel's name"))
+                        .then(console.log("changed voice channel's name"))
                         .catch(console.error);
                 })
                 .catch(console.error);
         }
         else if (msg.content.match(/閉店/)) {
             text = atMarkAuthor + 'キョウモ イチニチ オツカレサマデスネ？';
-            msg.channel.fetch(getTextId())
+            client.channels.fetch(getTextId())
                 .then(channel => {
                     const name = channel.name;
                     channel.setName(name.replace(/_.*/i, '_CLOSE|オフィスKUMASAN'))
@@ -38,11 +38,11 @@ module.exports = (msg) => {
                         .catch(console.error);
                 })
                 .catch(console.error);
-            msg.channel.fetch(getVoiceId())
+            client.channels.fetch(getVoiceId())
                 .then(channel => {
                     const name = channel.name;
                     channel.setName(name.replace(/_.*/i, '_CLOSE|オフィスKUMASAN'))
-                        .then(console.log("changed text channel's name"))
+                        .then(console.log("changed voice channel's name"))
                         .catch(console.error);
                 })
                 .catch(console.error);
