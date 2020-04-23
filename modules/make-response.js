@@ -14,7 +14,7 @@ module.exports = (msg, client) => {
             client.channels.fetch(getTextId())
                 .then(channel => {
                     const name = channel.name;
-                    channel.setName(name.replace(/_.*/i, '_CLOSE|オフィスKUMASAN'))
+                    channel.setName(name.replace(/_.*/i, '_オフィスKUMASAN'))
                         .then(console.log("changed text channel's name"))
                         .catch(console.error);
                 })
@@ -22,7 +22,7 @@ module.exports = (msg, client) => {
             client.channels.fetch(getVoiceId())
                 .then(channel => {
                     const name = channel.name;
-                    channel.setName(name.replace(/_.*/i, '_CLOSE|オフィスKUMASAN'))
+                    channel.setName(name.replace(/_.*/i, '_オフィスKUMASAN'))
                         .then(console.log("changed voice channel's name"))
                         .catch(console.error);
                 })
@@ -33,7 +33,7 @@ module.exports = (msg, client) => {
             client.channels.fetch(getTextId())
                 .then(channel => {
                     const name = channel.name;
-                    channel.setName(name.replace(/_.*/i, '_CLOSE|オフィスKUMASAN'))
+                    channel.setName(name.replace(/_.*/i, '_CLOSEDオフィスKUMASAN'))
                         .then(console.log("changed text channel's name"))
                         .catch(console.error);
                 })
@@ -41,7 +41,7 @@ module.exports = (msg, client) => {
             client.channels.fetch(getVoiceId())
                 .then(channel => {
                     const name = channel.name;
-                    channel.setName(name.replace(/_.*/i, '_CLOSE|オフィスKUMASAN'))
+                    channel.setName(name.replace(/_.*/i, '_CLOSEDオフィスKUMASAN'))
                         .then(console.log("changed voice channel's name"))
                         .catch(console.error);
                 })
