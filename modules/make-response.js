@@ -1,5 +1,7 @@
 'use strict'
 
+const getTextId = require('./get-text-id.js');
+const getVoiceId = require('./get-voice-id.js');
 const generateMessageTo = require('./generate-message.js');
 
 module.exports = (msg) => {
