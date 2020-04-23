@@ -10,7 +10,7 @@ const makeResponseTo = require('./modules/make-response.js');
 const getTextId = require('./modules/get-text-id.js');
 const setTextId = require('./modules/set-text-id.js');
 const setVoiceId = require('./modules/set-voice-id.js');
-const isMessageExeption = require('./modules/message-exception.js');
+const isMessageException = require('./modules/message-exception.js');
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -30,7 +30,7 @@ client.on('channelDelete', deletedChannel => {
 });
 
 client.on('message', msg => {
-    if (isMessageExeption(msg)) {
+    if (isMessageException(msg)) {
         return;
     }
     openOfficeIfNeeded(msg);
