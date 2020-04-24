@@ -58,6 +58,9 @@ module.exports = (msg, client) => {
         return;
     }
     // ワードセットにマッチしたら返答を生成
+    if (!getTextId()) {
+        return;
+    }
     const text = generateMessageTo(msg);
     if (text) {
         msg.channel.send(text);
