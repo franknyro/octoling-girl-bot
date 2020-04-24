@@ -1,7 +1,7 @@
 'use strict'
 
 // 0 late-night 4 early-morning 9 morning 12 afternoon 15 early-evening 18 evening 21 night 24
-const curDate = new Date();
+const curDate = Date();
 const curHour = curDate.getHours();
 
 // あいさつ（優先度高）時間帯によって返答が変わる
