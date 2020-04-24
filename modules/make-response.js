@@ -5,6 +5,9 @@ const getVoiceId = require('./get-voice-id.js');
 const generateMessageTo = require('./generate-message.js');
 
 module.exports = (msg, client) => {
+    if (!getTextId()) {
+        return;
+    }
     // タコガール宛のメンションに返信する
     if (msg.content.match(/<@!697530975722143915>/)) {
         const atMarkAuthor = `${msg.author}` + ' ';
@@ -58,9 +61,6 @@ module.exports = (msg, client) => {
         return;
     }
     // ワードセットにマッチしたら返答を生成
-    if (!getTextId()) {
-        return;
-    }
     const text = generateMessageTo(msg);
     if (text) {
         msg.channel.send(text);
