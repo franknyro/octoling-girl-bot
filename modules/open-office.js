@@ -14,7 +14,9 @@ module.exports = (msg, client) => {
         }
         else {
             setTextId(msg.channel.id);
+            console.log("Text = " + msg.channel.id);
             setVoiceId(msg.member.voice.channel.id);
+            console.log("Voice = " + msg.member.voice.channel.id);
             msg.channel.send('オフィス ツカイマスネ？');
             client.channels.fetch(getTextId())
                 .then(channel => {
