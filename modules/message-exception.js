@@ -1,28 +1,28 @@
 'use strict'
 
-const getTextId = require('./get-text-id.js');
+const textId = process.env.TEXT_ID;
 
 module.exports = (msg) => {
-    if (msg.author.bot) {
-        return true;
-    }
+    // DM を除外
     if (msg.channel.type === 'dm') {
-        return true;
+        return false;
+    }
+    // bot からのチャットを除外
+    if (msg.author.bot) {
+        return false;
+    }
+    // オフィスチャンネル以外のチャットを無視
+    if (msg.channel.id !== textId) {
+        return false;
     }
     // チャットの送信者がボイスチャンネルにいない場合を除外
     if (!msg.member.voice.channel) {
-        return true;
+        return false;
     }
     // テキストチャンネルと同名のボイスチャンネルにいない場合を除外
     if (msg.channel.name.toLowerCase() !== msg.member.voice.channel.name.toLowerCase()) {
-        return true;
-    }
-    // オフィス化したチャンネルがあるときは、そのチャンネル以外のチャットを無視
-    if (getTextId()) {
-        if (msg.channel.id !== getTextId()) {
-            return true;
-        }
+        return false;
     }
 
-    return false;
+    return true;
 }
