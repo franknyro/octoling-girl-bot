@@ -1,9 +1,8 @@
 'use strict'
 
 // 0 late-night 4 early-morning 9 morning 12 afternoon 15 early-evening 18 evening 21 night 24
-const UTC = new Date();
-const UTCHours = UTC.getUTCHours();
-const JSTHours = (UTCHours + 9) % 24;
+const JST = new Date();
+const JSTHours = JST.getHours();
 
 // あいさつ（優先度高）時間帯によって返答が変わる
 // ねぎらいのことば（優先度低）時間帯によって返答が変わらない
