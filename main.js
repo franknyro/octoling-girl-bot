@@ -3,7 +3,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.env.OCTOLING_GIRL_BOT_TOKEN;
-const textId = process.env.TEXT_ID;
 
 const makeResponseTo = require('./modules/make-response.js');
 const isMessageException = require('./modules/message-exception.js');
